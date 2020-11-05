@@ -1,0 +1,24 @@
+all:
+  hosts:
+    pi-node-1:
+      ansible_host: 192.168.1.169
+    pi-node-2:
+      ansible_host: 192.168.1.166
+    pi-node-3:
+      ansible_host: 192.168.1.168
+    pi-node-4:
+      ansible_host: 192.168.1.250
+pi3:
+  hosts:
+    pi-node-1:
+    pi-node-2:
+    pi-node-3:
+    pi-node-4:
+  vars:
+    ansible_connection: ssh
+    ansible_user: pi
+    ansible_password: raspberry
+multi:
+  children:
+    pi3:
+
