@@ -1,0 +1,32 @@
+---
+- name: Update all systems
+  hosts: all
+
+  pre_tasks:
+    - name: Update apt cache if needed.
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+      become: true
+  tasks:
+    - name: Update system
+      apt:
+        upgrade: dist
+        update_cache: yes
+      become: true
+- name: Ensure standard config
+  hosts: all
+  become: true
+  tasks:
+    - name: Set python 3 to be default for python
+      community.general.alternatives:
+        name: python
+        link: /usr/bin/python
+        path: "{{ item.path }}"
+        priority: "{{ item.priority }}"
+      with_items:
+        - path: /usr/bin/python2
+          priority: -1
+        - path: /usr/bin/python3
+          priority: 50
+
