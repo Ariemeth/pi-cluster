@@ -16,8 +16,7 @@ pi3:
     pi-node-4:
   vars:
     ansible_connection: ssh
-    ansible_user: pi
-    ansible_password: raspberry
+    ansible_user: ubuntu
 multi:
   children:
     pi3:
