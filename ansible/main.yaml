@@ -1,16 +1,32 @@
 ---
 - name: Update all systems
   hosts: all
+  become: true
 
   pre_tasks:
     - name: Update apt cache if needed.
       apt:
         update_cache: yes
         cache_valid_time: 3600
-      become: true
   tasks:
     - name: Update system
       apt:
         upgrade: dist
         update_cache: yes
-      become: true
+    - name: "Update Hostnames"
+      hostname:
+        name: "{{ inventory_hostname }}"
+    - name: 'Add hostname to /etc/hosts'
+      lineinfile:
+        path: /etc/hosts
+        regexp: '^127\.0\.0\.1[ \t]+localhost'
+        line: '127.0.0.1 localhost {{ inventory_hostname }}'
+        state: present
+      notify:
+      - Reboot server
+  handlers:
+    - name: Reboot server
+      reboot:
+        msg: "Ansible is rebooting the server"
+        post_reboot_delay: 10
+  
