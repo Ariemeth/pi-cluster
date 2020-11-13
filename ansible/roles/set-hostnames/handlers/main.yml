@@ -1,0 +1,6 @@
+---
+# handlers file for set-hostnames
+- name: reboot server
+  reboot:
+    msg: "Ansible is rebooting the server"
+    post_reboot_delay: 10

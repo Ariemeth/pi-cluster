@@ -1,0 +1,8 @@
+---
+- name: Update all systems
+  hosts: all
+  become: true
+  roles:
+    - role: set-hostnames
+    - role: system-update
+ 

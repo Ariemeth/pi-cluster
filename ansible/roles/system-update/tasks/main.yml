@@ -1,0 +1,9 @@
+---
+# tasks file for system-update
+- name: Wait for automatic system updates
+  shell: "while fuser /var/lib/dpkg/lock >/dev/null 2>&1; do sleep 1; done;"
+- name: Update system
+  apt:
+    upgrade: dist
+    update_cache: yes
+    cache_valid_time: 3600
