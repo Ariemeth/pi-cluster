@@ -1,6 +1,0 @@
----
-key_file: "/home/ecarmack/.ssh/id_ed25519"
-root_password: "setme"
-root_user: "ubuntu"
-passphrase: "somepassphrase"
-

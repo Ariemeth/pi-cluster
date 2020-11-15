@@ -1,0 +1,6 @@
+---
+# vars file for configure-passwordless-ssh
+key_file: "{{ vault_key_file }}"
+root_password: "{{ vault_root_password }}"
+root_user: "{{ vault_root_user }}"
+passphrase: "{{ vault_passphrase }}"

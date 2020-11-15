@@ -1,4 +1,10 @@
 ---
+# TODO: find a way to only run this is the certs are not the same
+#- name: Initialize systems
+#  hosts: localhost
+#  roles:
+#    - role: configure-passwordless-ssh
+
 - name: Update all systems
   hosts: all
   become: true
