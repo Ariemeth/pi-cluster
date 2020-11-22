@@ -16,7 +16,7 @@
   when: op.stat.exists == false
 
 - debug: 
-    msg: "Key pair already exists. Using the same key."
+    msg: "Key pair already exists. Using existing key."
   when: op.stat.exists
 
 - name: Copy public key to the nodes
