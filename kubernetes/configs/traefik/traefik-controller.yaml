@@ -1,0 +1,11 @@
+image:
+  tag: 2.3.3
+
+ingressClass:
+  enabled: true
+  isDefaultClass: true
+
+experimental:
+  plugins:
+    enabled: true
+    
