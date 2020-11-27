@@ -10,6 +10,6 @@ spec:
         paths:
           - path: /
             backend:
-              serviceName: simpleweb
+              serviceName: sw1-simpleweb
               servicePort: 9001
 
