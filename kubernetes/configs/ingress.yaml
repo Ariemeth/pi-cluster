@@ -5,24 +5,11 @@ metadata:
 
 spec:
   rules:
-    - host: metadiversions.com
-      http:
+#    - host:
+    - http:
         paths:
           - path: /
             backend:
               serviceName: simpleweb
               servicePort: 9001
-    - host: metadiversion.com
-      http:
-        paths:
-          - path: /
-            backend:
-              serviceName: simpleweb
-              servicePort: 9001
-    - host: growingsewfast.com
-      http:
-        paths:
-          - path: /
-            backend:
-              serviceName: simpleweb
-              servicePort: 9001
+
