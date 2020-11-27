@@ -1,0 +1,28 @@
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata:
+  name: primary
+
+spec:
+  rules:
+    - host: metadiversions.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: simpleweb
+              servicePort: 9001
+    - host: metadiversion.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: simpleweb
+              servicePort: 9001
+    - host: growingsewfast.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: simpleweb
+              servicePort: 9001

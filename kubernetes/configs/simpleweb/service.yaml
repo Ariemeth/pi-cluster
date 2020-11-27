@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: simpleweb
+spec:
+  selector: 
+    app: simpleweb
+  ports:
+    - protocol: TCP
+      port: 9001
+      targetPort: 8081

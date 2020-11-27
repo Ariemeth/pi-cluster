@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simpleweb-deployment
+  labels:
+    app: simpleweb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simpleweb
+  template:
+    metadata:
+      labels:
+        app: simpleweb
+    spec:
+      containers:
+      - name: simpleweb
+        image: docker.io/edwardcarmack/simpleweb:0.0.1
+        ports:
+        - containerPort: 8081
