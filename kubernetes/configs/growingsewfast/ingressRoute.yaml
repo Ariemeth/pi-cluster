@@ -2,7 +2,7 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: meta-test-secure
+  name: primary
 spec:
   entryPoints:
     - websecure
@@ -14,18 +14,3 @@ spec:
       port: 9001
   tls:
     secretName: growingsewfast-com-tls
----
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
-metadata:
-  name: meta-test-insecure
-spec:
-  entryPoints:
-    - web
-  routes:
-  - match: Host(`growingsewfast.com`)
-    kind: Rule
-    services:
-    - name: sw1-simpleweb
-      port: 9001
-

@@ -19,13 +19,9 @@ persistence:
 logs:
   general: 
     level: INFO
+  access:
+    enabled: true
 
-#additionalArguments:
-#- "--certificatesresolvers.letsencrypt.acme.email=ariemethacc@gmail.com"
-#- "--certificatesresolvers.le.acme.storage=/data/acme.json"
-#- "--certificatesresolvers.letsencrypt.acme.caserver=https://acme-v02.api.letsencrypt.org/directory"
-#- "--certificatesResolvers.letsencrypt.acme.dnschallenge=true"
-#- "--certificatesResolvers.letsencrypt.acme.dnschallenge.provider=cloudflare"
-#- "--api.insecure=true"
-#- "--accesslog=true"
-#- "--log.level=INFO"
+ports:
+  web:
+    redirectTo: websecure
