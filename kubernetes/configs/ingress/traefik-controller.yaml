@@ -1,6 +1,9 @@
 image:
   tag: 2.3.3
 
+deployment:
+  enabled: true
+
 ingressClass:
   enabled: true
   isDefaultClass: true
@@ -9,3 +12,20 @@ experimental:
   plugins:
     enabled: true
     
+persistence:
+  enabled: false
+  storageClass: openebs-jiva-default
+
+logs:
+  general: 
+    level: INFO
+
+#additionalArguments:
+#- "--certificatesresolvers.letsencrypt.acme.email=ariemethacc@gmail.com"
+#- "--certificatesresolvers.le.acme.storage=/data/acme.json"
+#- "--certificatesresolvers.letsencrypt.acme.caserver=https://acme-v02.api.letsencrypt.org/directory"
+#- "--certificatesResolvers.letsencrypt.acme.dnschallenge=true"
+#- "--certificatesResolvers.letsencrypt.acme.dnschallenge.provider=cloudflare"
+#- "--api.insecure=true"
+#- "--accesslog=true"
+#- "--log.level=INFO"

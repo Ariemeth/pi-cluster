@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: metadiversions-com
+  namespace: metadiversions
+spec:
+  secretName: metadiversions-com-tls
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: metadiversions.com
+  dnsNames:
+  - metadiversions.com

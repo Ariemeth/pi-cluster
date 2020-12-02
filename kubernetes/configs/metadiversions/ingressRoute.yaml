@@ -1,0 +1,31 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: meta-test-secure
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`metadiversions.com`)
+    kind: Rule
+    services:
+    - name: sw1-simpleweb
+      port: 9001
+  tls:
+    secretName: metadiversions-com-tls
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: meta-test-insecure
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`metadiversions.com`)
+    kind: Rule
+    services:
+    - name: sw1-simpleweb
+      port: 9001
+
